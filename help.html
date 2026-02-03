@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MacFresh Help Center - Comprehensive guide to using MacFresh, the universal app updater for macOS.">
+    <title>Help Center - MacFresh</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        .help-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 968px) {
+            .help-container {
+                grid-template-columns: 1fr;
+            }
+            .help-sidebar {
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+        }
+        
+        .help-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+        
+        .help-sidebar h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        .help-sidebar h3:first-child {
+            margin-top: 0;
+        }
+        
+        .help-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .help-sidebar li {
+            margin: 0;
+        }
+        
+        .help-sidebar a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        
+        .help-sidebar a:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+        
+        .help-sidebar a.active {
+            color: var(--accent-blue);
+            background: rgba(0, 122, 255, 0.1);
+        }
+        
+        .help-content {
+            min-width: 0;
+        }
+        
+        .help-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .help-content h2 {
+            font-size: 1.75rem;
+            margin: 3rem 0 1rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .help-content h2:first-of-type {
+            border-top: none;
+            margin-top: 2rem;
+        }
+        
+        .help-content h3 {
+            font-size: 1.25rem;
+            margin: 2rem 0 0.75rem 0;
+            color: var(--text-primary);
+        }
+        
+        .help-content h4 {
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+        
+        .help-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .help-content ul, .help-content ol {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .help-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .help-intro {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .help-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .help-card h4 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .help-card.tip {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .help-card.warning {
+            border-left: 4px solid var(--accent-orange);
+        }
+        
+        .help-card.info {
+            border-left: 4px solid var(--accent-blue);
+        }
+        
+        .shortcut-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .shortcut-table th,
+        .shortcut-table td {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .shortcut-table th {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .shortcut-table td:first-child {
+            white-space: nowrap;
+        }
+        
+        .kbd {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Mono", Monaco, monospace;
+            font-size: 0.85rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+        
+        .feature-item h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        
+        .feature-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .status-indicator.green {
+            background: rgba(52, 199, 89, 0.15);
+            color: var(--accent-green);
+        }
+        
+        .status-indicator.orange {
+            background: rgba(255, 159, 10, 0.15);
+            color: var(--accent-orange);
+        }
+        
+        .status-indicator.red {
+            background: rgba(255, 69, 58, 0.15);
+            color: var(--accent-red);
+        }
+        
+        .toc-quick {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .toc-quick h3 {
+            margin-top: 0;
+        }
+        
+        .toc-quick ul {
+            columns: 2;
+            column-gap: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .toc-quick ul {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍃</span>
+                <span class="logo-text">MacFresh</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="help.html" class="active">Help</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            <a href="https://apps.apple.com/app/macfresh" class="btn btn-primary">Download</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Help Center</h1>
+            <p>Everything you need to know about using MacFresh</p>
+        </div>
+    </div>
+
+    <div class="help-container">
+        <!-- Sidebar Navigation -->
+        <aside class="help-sidebar">
+            <h3>Getting Started</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#first-launch">First Launch</a></li>
+                <li><a href="#granting-access">Granting Folder Access</a></li>
+                <li><a href="#first-scan">Your First Scan</a></li>
+            </ul>
+            
+            <h3>Main Interface</h3>
+            <ul>
+                <li><a href="#sidebar">Sidebar Navigation</a></li>
+                <li><a href="#app-list">App List View</a></li>
+                <li><a href="#app-details">App Details</a></li>
+                <li><a href="#toolbar">Toolbar Actions</a></li>
+            </ul>
+            
+            <h3>Updating Apps</h3>
+            <ul>
+                <li><a href="#check-updates">Checking for Updates</a></li>
+                <li><a href="#single-update">Updating Single Apps</a></li>
+                <li><a href="#batch-update">Batch Updates</a></li>
+                <li><a href="#update-sources">Update Sources</a></li>
+                <li><a href="#release-notes">Release Notes</a></li>
+            </ul>
+            
+            <h3>Settings</h3>
+            <ul>
+                <li><a href="#settings-general">General Settings</a></li>
+                <li><a href="#settings-updates">Update Settings</a></li>
+                <li><a href="#settings-schedule">Schedule Settings</a></li>
+                <li><a href="#settings-ignored">Ignored Apps</a></li>
+                <li><a href="#settings-reports">Reports &amp; Export</a></li>
+                <li><a href="#settings-about">About</a></li>
+            </ul>
+            
+            <h3>Advanced</h3>
+            <ul>
+                <li><a href="#security-status">Security Status</a></li>
+                <li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="help-content">
+            <h1>MacFresh User Guide</h1>
+            <p class="help-intro">Welcome to MacFresh, the universal app updater for macOS. This comprehensive guide will help you get the most out of MacFresh and keep all your applications up to date.</p>
+
+            <div class="toc-quick">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#first-launch">Getting Started</a></li>
+                    <li><a href="#sidebar">Main Interface</a></li>
+                    <li><a href="#check-updates">Updating Apps</a></li>
+                    <li><a href="#settings-general">Settings</a></li>
+                    <li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ul>
+            </div>
+
+            <!-- GETTING STARTED -->
+            <h2 id="introduction">Introduction</h2>
+            <p>MacFresh is a powerful yet easy-to-use application that helps you keep all your Mac applications up to date. Unlike the Mac App Store, which only handles apps purchased through Apple, MacFresh can detect and update apps from any source.</p>
+            
+            <h3>What MacFresh Does</h3>
+            <ul>
+                <li>Scans your Mac for all installed applications</li>
+                <li>Detects available updates from multiple sources (Sparkle, GitHub, Electron, App Store, and more)</li>
+                <li>Downloads and installs updates with a single click</li>
+                <li>Keeps track of your update history</li>
+                <li>Notifies you when new updates are available</li>
+                <li>Shows security status for all your applications</li>
+            </ul>
+
+            <h3>System Requirements</h3>
+            <ul>
+                <li>macOS 14.0 (Sonoma) or later</li>
+                <li>Apple Silicon (M1/M2/M3/M4) or Intel processor</li>
+                <li>Approximately 50 MB of disk space</li>
+            </ul>
+
+            <h2 id="first-launch">First Launch</h2>
+            <p>When you first open MacFresh, you will see a welcome screen that guides you through the initial setup process. The setup is quick and only needs to be done once.</p>
+            
+            <h3>What Happens on First Launch</h3>
+            <ol>
+                <li>MacFresh displays a welcome message explaining its features</li>
+                <li>You are prompted to grant access to your Applications folder</li>
+                <li>MacFresh performs an initial scan of all installed applications</li>
+                <li>The main interface appears showing your apps and any available updates</li>
+            </ol>
+
+            <h2 id="granting-access">Granting Folder Access</h2>
+            <p>MacFresh needs permission to access your Applications folder to scan for installed apps and perform updates. This is a security feature of macOS called "sandboxing."</p>
+            
+            <h3>How to Grant Access</h3>
+            <ol>
+                <li>Click the "Grant Access" or "Select Folder" button when prompted</li>
+                <li>A file picker dialog will appear</li>
+                <li>Navigate to your Applications folder (usually located at /Applications)</li>
+                <li>Click "Open" or "Select" to grant access</li>
+            </ol>
+            
+            <div class="help-card info">
+                <h4>ℹ️ About Security and Privacy</h4>
+                <p>MacFresh uses macOS security-scoped bookmarks to remember your folder access. This is the secure, Apple-recommended way to access files. Your data never leaves your Mac, and MacFresh cannot access any folders you have not explicitly granted access to.</p>
+            </div>
+
+            <h3>Adding Additional Folders</h3>
+            <p>If you have applications installed in other locations (such as a secondary drive or a custom folder), you can add those folders as well:</p>
+            <ol>
+                <li>Open MacFresh Settings (press <span class="kbd">⌘</span> + <span class="kbd">,</span> or use the menu)</li>
+                <li>Go to the "General" tab</li>
+                <li>Click "Add Folder" to add additional application locations</li>
+            </ol>
+
+            <h2 id="first-scan">Your First Scan</h2>
+            <p>After granting folder access, MacFresh automatically scans for all installed applications. This initial scan may take a minute or two depending on how many apps you have installed.</p>
+            
+            <h3>What the Scan Does</h3>
+            <ul>
+                <li>Identifies all .app bundles in your Applications folder(s)</li>
+                <li>Reads version information from each application</li>
+                <li>Checks for update mechanisms (Sparkle, Electron, etc.)</li>
+                <li>Queries update sources for available versions</li>
+                <li>Determines code signing and notarization status</li>
+            </ul>
+            
+            <div class="help-card tip">
+                <h4>💡 Tip</h4>
+                <p>You can trigger a manual rescan at any time by clicking the refresh button in the toolbar or pressing <span class="kbd">⌘</span> + <span class="kbd">R</span>.</p>
+            </div>
+
+            <!-- MAIN INTERFACE -->
+            <h2 id="sidebar">Sidebar Navigation</h2>
+            <p>The sidebar on the left side of the MacFresh window provides quick access to different views of your applications.</p>
+            
+            <h3>Sidebar Categories</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>📦 All Apps</h4>
+                    <p>Shows every application that MacFresh has detected on your Mac. This is the complete inventory of your installed software.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔄 Updates Available</h4>
+                    <p>Lists applications that have newer versions available. The badge shows the count of pending updates.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✓ Up to Date</h4>
+                    <p>Applications that are running the latest available version.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>❓ Unknown</h4>
+                    <p>Applications where MacFresh could not determine the update status (no update mechanism detected).</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🚫 Ignored</h4>
+                    <p>Applications you have chosen to ignore. MacFresh will not check these for updates.</p>
+                </div>
+            </div>
+
+            <h3>Grouping Options</h3>
+            <p>You can change how applications are grouped in the sidebar:</p>
+            <ul>
+                <li><strong>By Status:</strong> Groups apps by update status (default)</li>
+                <li><strong>By Category:</strong> Groups apps by App Store category</li>
+                <li><strong>By Source:</strong> Groups apps by where updates come from</li>
+            </ul>
+
+            <h2 id="app-list">App List View</h2>
+            <p>The main content area displays your applications in a list or grid format. Each app entry shows key information at a glance.</p>
+            
+            <h3>Information Displayed</h3>
+            <ul>
+                <li><strong>App Icon:</strong> The application's icon for easy identification</li>
+                <li><strong>App Name:</strong> The name of the application</li>
+                <li><strong>Current Version:</strong> The version you have installed</li>
+                <li><strong>Available Version:</strong> The newest version available (if an update exists)</li>
+                <li><strong>Update Source:</strong> Where the update comes from (Sparkle, GitHub, etc.)</li>
+                <li><strong>Update Button:</strong> Click to update the individual app</li>
+            </ul>
+
+            <h3>Sorting Options</h3>
+            <p>Click the column headers or use the View menu to sort apps by:</p>
+            <ul>
+                <li>Name (alphabetically)</li>
+                <li>Last Updated</li>
+                <li>Size</li>
+                <li>Update Status</li>
+            </ul>
+
+            <h2 id="app-details">App Details</h2>
+            <p>Click on any application to view its detailed information panel. This panel provides comprehensive information about the selected app.</p>
+            
+            <h3>Details Panel Contents</h3>
+            <ul>
+                <li><strong>Application Name and Icon:</strong> Large display of the app identity</li>
+                <li><strong>Version Information:</strong> Current version, available version, and version history</li>
+                <li><strong>Developer:</strong> The company or individual who created the app</li>
+                <li><strong>Bundle Identifier:</strong> The unique identifier for the app (e.g., com.example.app)</li>
+                <li><strong>Install Location:</strong> Where the app is located on your Mac</li>
+                <li><strong>File Size:</strong> How much disk space the app uses</li>
+                <li><strong>Update Source:</strong> How MacFresh detects updates for this app</li>
+                <li><strong>Security Status:</strong> Code signing and notarization information</li>
+                <li><strong>Release Notes:</strong> What changed in the latest version</li>
+            </ul>
+
+            <h3>Actions in Details Panel</h3>
+            <ul>
+                <li><strong>Update:</strong> Download and install the latest version</li>
+                <li><strong>Show in Finder:</strong> Open the folder containing the app</li>
+                <li><strong>Ignore App:</strong> Add to the ignore list</li>
+                <li><strong>Ignore This Version:</strong> Skip this specific update</li>
+            </ul>
+
+            <h2 id="toolbar">Toolbar Actions</h2>
+            <p>The toolbar at the top of the window provides quick access to common actions.</p>
+            
+            <h3>Toolbar Buttons</h3>
+            <ul>
+                <li><strong>Refresh / Rescan:</strong> Check all apps for updates</li>
+                <li><strong>Update All:</strong> Download and install all available updates</li>
+                <li><strong>Filter:</strong> Filter the app list by various criteria</li>
+                <li><strong>Search:</strong> Find a specific app by name</li>
+                <li><strong>Settings:</strong> Open the settings window</li>
+            </ul>
+
+            <!-- UPDATING APPS -->
+            <h2 id="check-updates">Checking for Updates</h2>
+            <p>MacFresh can check for updates automatically or manually.</p>
+            
+            <h3>Automatic Update Checks</h3>
+            <p>By default, MacFresh periodically checks for updates in the background. You can configure the frequency in Settings:</p>
+            <ul>
+                <li>Every hour</li>
+                <li>Every 6 hours</li>
+                <li>Every 12 hours</li>
+                <li>Daily</li>
+                <li>Weekly</li>
+                <li>Manual only</li>
+            </ul>
+
+            <h3>Manual Update Checks</h3>
+            <p>To manually check for updates:</p>
+            <ol>
+                <li>Click the Refresh button in the toolbar, or</li>
+                <li>Press <span class="kbd">⌘</span> + <span class="kbd">R</span>, or</li>
+                <li>Select "Check for Updates" from the File menu</li>
+            </ol>
+
+            <h2 id="single-update">Updating Single Apps</h2>
+            <p>To update an individual application:</p>
+            <ol>
+                <li>Find the app in the list (use search if needed)</li>
+                <li>Click the "Update" button next to the app name, or</li>
+                <li>Select the app and click "Update" in the details panel</li>
+            </ol>
+            
+            <h3>What Happens During an Update</h3>
+            <ol>
+                <li>MacFresh downloads the update file to your Downloads folder</li>
+                <li>The download progress is displayed</li>
+                <li>Once complete, the installer opens or the app is replaced automatically</li>
+                <li>You may need to close the app if it is currently running</li>
+            </ol>
+
+            <div class="help-card warning">
+                <h4>⚠️ Important</h4>
+                <p>Some updates require you to quit the application before the update can be installed. MacFresh will prompt you if this is necessary.</p>
+            </div>
+
+            <h2 id="batch-update">Batch Updates</h2>
+            <p>One of MacFresh's most powerful features is the ability to update multiple apps at once.</p>
+            
+            <h3>Update All Apps</h3>
+            <ol>
+                <li>Click the "Update All" button in the toolbar, or</li>
+                <li>Press <span class="kbd">⌘</span> + <span class="kbd">⇧</span> + <span class="kbd">U</span></li>
+                <li>Confirm the batch update when prompted</li>
+            </ol>
+
+            <h3>Selective Batch Update</h3>
+            <p>To update only selected apps:</p>
+            <ol>
+                <li>Hold <span class="kbd">⌘</span> and click to select multiple apps</li>
+                <li>Right-click and select "Update Selected", or</li>
+                <li>Click the "Update Selected" button that appears</li>
+            </ol>
+
+            <h2 id="update-sources">Update Sources</h2>
+            <p>MacFresh detects updates from multiple sources. Understanding these sources helps you know where your updates come from.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>✨ Sparkle</h4>
+                    <p>The most common update framework for Mac apps. Used by thousands of independent developers. Updates are downloaded directly from the developer's server.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🐙 GitHub Releases</h4>
+                    <p>Many open-source and developer tools release updates through GitHub. MacFresh monitors release pages for new versions.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚛️ Electron</h4>
+                    <p>Cross-platform apps built with Electron (like VS Code, Slack, Discord) have their own update mechanism that MacFresh can detect.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🍎 Mac App Store</h4>
+                    <p>For apps purchased from the Mac App Store, MacFresh can show pending updates (though you still update through the App Store).</p>
+                </div>
+                <div class="feature-item">
+                    <h4>👥 Crowdsourced Database</h4>
+                    <p>Our community-maintained database provides update information for apps that do not have automatic update mechanisms.</p>
+                </div>
+            </div>
+
+            <h2 id="release-notes">Release Notes</h2>
+            <p>Before updating, you can review what changed in the new version.</p>
+            
+            <h3>Viewing Release Notes</h3>
+            <ol>
+                <li>Select an app with an available update</li>
+                <li>Look at the details panel on the right</li>
+                <li>Scroll down to the "Release Notes" or "What's New" section</li>
+            </ol>
+
+            <div class="help-card tip">
+                <h4>💡 Tip</h4>
+                <p>Reading release notes helps you decide whether an update is important for your workflow, or if you should skip a version that might introduce breaking changes.</p>
+            </div>
+
+            <!-- SETTINGS -->
+            <h2 id="settings-general">General Settings</h2>
+            <p>Access settings by pressing <span class="kbd">⌘</span> + <span class="kbd">,</span> or selecting "Settings" from the MacFresh menu.</p>
+            
+            <h3>General Tab Options</h3>
+            <ul>
+                <li><strong>Launch at Login:</strong> Start MacFresh automatically when you log in to your Mac</li>
+                <li><strong>Show in Menu Bar:</strong> Display a MacFresh icon in the menu bar for quick access</li>
+                <li><strong>Show Dock Icon:</strong> Show or hide the MacFresh icon in the Dock</li>
+                <li><strong>Application Folders:</strong> Manage which folders MacFresh scans for applications</li>
+                <li><strong>Downloads Location:</strong> Choose where update files are saved</li>
+            </ul>
+
+            <h2 id="settings-updates">Update Settings</h2>
+            <p>Configure how MacFresh checks for and handles updates.</p>
+            
+            <h3>Update Tab Options</h3>
+            <ul>
+                <li><strong>Check Frequency:</strong> How often MacFresh looks for new updates (hourly, daily, weekly, etc.)</li>
+                <li><strong>Automatic Downloads:</strong> Automatically download updates in the background</li>
+                <li><strong>Automatic Installation:</strong> Install updates automatically (requires confirmation)</li>
+                <li><strong>Include Beta Versions:</strong> Show pre-release and beta versions of apps</li>
+                <li><strong>Update Sources:</strong> Enable or disable specific update sources</li>
+            </ul>
+
+            <h2 id="settings-schedule">Schedule Settings</h2>
+            <p>Set specific times for update checks and installations.</p>
+            
+            <h3>Schedule Options</h3>
+            <ul>
+                <li><strong>Quiet Hours:</strong> Define times when MacFresh should not show notifications or perform updates</li>
+                <li><strong>Update Window:</strong> Specify preferred times for installing updates</li>
+                <li><strong>Day Preferences:</strong> Choose which days of the week to check for updates</li>
+            </ul>
+
+            <div class="help-card info">
+                <h4>ℹ️ Example Schedule</h4>
+                <p>You might configure MacFresh to check for updates at 9 AM every weekday, with quiet hours from 10 PM to 7 AM. This ensures you are notified about updates when you start work, but are not disturbed in the evening.</p>
+            </div>
+
+            <h2 id="settings-ignored">Ignored Apps</h2>
+            <p>Manage which apps MacFresh should ignore.</p>
+            
+            <h3>Ignore Options</h3>
+            <ul>
+                <li><strong>Ignore App Entirely:</strong> Never check this app for updates</li>
+                <li><strong>Ignore Specific Version:</strong> Skip only the current available update</li>
+                <li><strong>Temporary Ignore:</strong> Ignore for a set period (1 day, 1 week, 1 month)</li>
+            </ul>
+
+            <h3>Managing Ignored Apps</h3>
+            <p>In the Ignored Apps settings tab, you can:</p>
+            <ul>
+                <li>View all currently ignored apps</li>
+                <li>See why each app was ignored (user choice, specific version, etc.)</li>
+                <li>Remove apps from the ignore list to resume update checks</li>
+            </ul>
+
+            <h2 id="settings-reports">Reports and Export</h2>
+            <p>MacFresh can generate reports about your installed applications.</p>
+            
+            <h3>Export App Inventory</h3>
+            <p>Create a complete list of all installed applications:</p>
+            <ol>
+                <li>Go to Settings → Reports</li>
+                <li>Click "Export App Inventory"</li>
+                <li>Choose the export format (CSV, JSON, or PDF)</li>
+                <li>Select a save location</li>
+            </ol>
+            
+            <h3>Export Contents</h3>
+            <p>The exported inventory includes:</p>
+            <ul>
+                <li>Application name</li>
+                <li>Current version</li>
+                <li>Bundle identifier</li>
+                <li>Install location</li>
+                <li>Developer information</li>
+                <li>File size</li>
+                <li>Last modified date</li>
+            </ul>
+
+            <div class="help-card tip">
+                <h4>💡 Use Case</h4>
+                <p>App inventory exports are useful for IT compliance, documentation, setting up a new Mac, or just keeping track of what software you have installed.</p>
+            </div>
+
+            <h2 id="settings-about">About</h2>
+            <p>The About section provides information about MacFresh and helpful links.</p>
+            
+            <h3>About Tab Contents</h3>
+            <ul>
+                <li><strong>Version Information:</strong> The current version of MacFresh you are running</li>
+                <li><strong>Check for Updates:</strong> Check if a newer version of MacFresh is available</li>
+                <li><strong>Website:</strong> Link to the MacFresh website</li>
+                <li><strong>Support:</strong> Link to the support page</li>
+                <li><strong>Privacy Policy:</strong> View our privacy policy</li>
+                <li><strong>Terms of Service:</strong> View our terms of service</li>
+                <li><strong>Acknowledgments:</strong> Credits for open-source components used</li>
+            </ul>
+
+            <!-- ADVANCED -->
+            <h2 id="security-status">Security Status</h2>
+            <p>MacFresh shows the security status of every application, helping you identify potential risks.</p>
+            
+            <h3>Understanding Security Indicators</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4><span class="status-indicator green">✓ Verified</span></h4>
+                    <p>The app is properly code-signed by an identified developer and notarized by Apple. This is the highest level of trust.</p>
+                </div>
+                <div class="feature-item">
+                    <h4><span class="status-indicator green">✓ Signed</span></h4>
+                    <p>The app is code-signed by a developer but has not been notarized by Apple. Still trustworthy for most purposes.</p>
+                </div>
+                <div class="feature-item">
+                    <h4><span class="status-indicator orange">⚠ Unsigned</span></h4>
+                    <p>The app is not code-signed. This is common for some older or open-source apps. Exercise caution.</p>
+                </div>
+                <div class="feature-item">
+                    <h4><span class="status-indicator red">✗ Invalid</span></h4>
+                    <p>The app's signature is invalid or has been tampered with. This could indicate a security risk.</p>
+                </div>
+            </div>
+
+            <h3>Notarization</h3>
+            <p>Notarization is Apple's process of scanning apps for malware. A notarized app has been verified by Apple as safe to run.</p>
+            <ul>
+                <li><strong>Notarized:</strong> Apple has scanned and approved the app</li>
+                <li><strong>Not Notarized:</strong> The app has not been submitted to Apple for scanning</li>
+            </ul>
+
+            <h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+            <p>MacFresh supports many keyboard shortcuts to help you work faster.</p>
+            
+            <table class="shortcut-table">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">R</span></td>
+                        <td>Refresh / Check for updates</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">⇧</span> + <span class="kbd">U</span></td>
+                        <td>Update all apps</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">F</span></td>
+                        <td>Search for an app</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">,</span></td>
+                        <td>Open Settings</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">1</span></td>
+                        <td>Show All Apps</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">2</span></td>
+                        <td>Show Updates Available</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">3</span></td>
+                        <td>Show Up to Date</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">I</span></td>
+                        <td>Ignore selected app</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">⇧</span> + <span class="kbd">F</span></td>
+                        <td>Show app in Finder</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">Enter</span></td>
+                        <td>Update selected app</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">Space</span></td>
+                        <td>Quick Look preview</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">Q</span></td>
+                        <td>Quit MacFresh</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="troubleshooting">Troubleshooting</h2>
+            <p>Solutions to common issues you may encounter.</p>
+            
+            <h3>MacFresh is not detecting my apps</h3>
+            <ul>
+                <li>Make sure you have granted folder access (Settings → General → Application Folders)</li>
+                <li>Check if the app is in a standard .app bundle format</li>
+                <li>Try clicking Refresh to rescan</li>
+                <li>Command-line tools and system utilities may not appear</li>
+            </ul>
+
+            <h3>Updates are not being found</h3>
+            <ul>
+                <li>Some apps do not have automatic update mechanisms</li>
+                <li>The app developer may not have released an update</li>
+                <li>Check if the app is in the "Unknown" category</li>
+                <li>Try enabling "Include Beta Versions" in settings if you are looking for pre-release updates</li>
+            </ul>
+
+            <h3>An update fails to install</h3>
+            <ul>
+                <li>Make sure the app is not currently running</li>
+                <li>Check that you have enough disk space</li>
+                <li>Verify that your user account has permission to modify the Applications folder</li>
+                <li>Try downloading and installing the update manually from the developer's website</li>
+            </ul>
+
+            <h3>MacFresh is using too much CPU or memory</h3>
+            <ul>
+                <li>This typically happens during scanning—wait for it to complete</li>
+                <li>Reduce the scan frequency in Settings</li>
+                <li>Exclude folders with many non-app files</li>
+                <li>Restart MacFresh if the issue persists</li>
+            </ul>
+
+            <h3>Notifications are not appearing</h3>
+            <ul>
+                <li>Check macOS System Settings → Notifications → MacFresh</li>
+                <li>Make sure notifications are enabled for MacFresh</li>
+                <li>Verify that "Do Not Disturb" mode is not active</li>
+                <li>Check the notification frequency settings within MacFresh</li>
+            </ul>
+
+            <h3>I cannot grant folder access</h3>
+            <ul>
+                <li>Make sure you are clicking "Open" or "Select" in the file picker</li>
+                <li>Try selecting the exact folder rather than its parent</li>
+                <li>Check System Settings → Privacy &amp; Security → Files and Folders</li>
+                <li>Restart MacFresh and try again</li>
+            </ul>
+
+            <div class="help-card info">
+                <h4>📧 Still Need Help?</h4>
+                <p>If you are experiencing an issue not covered here, please visit our <a href="support.html">Support Page</a> or email us at <a href="mailto:mip@gmx.biz">mip@gmx.biz</a>. We are happy to help!</p>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">🍃</span>
+                        <span class="logo-text">MacFresh</span>
+                    </a>
+                    <p>Keep your Mac fresh.<br>The universal app updater for macOS.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Us</a></li>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="mailto:mip@gmx.biz">Email Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 MacFresh. All rights reserved.</p>
+                <p>Made with ❤️ for Mac users everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Highlight current section in sidebar
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.help-sidebar a').forEach(a => {
+                        a.classList.remove('active');
+                        if (a.getAttribute('href') === '#' + id) {
+                            a.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-100px 0px -70% 0px' });
+
+        document.querySelectorAll('.help-content h2[id]').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
