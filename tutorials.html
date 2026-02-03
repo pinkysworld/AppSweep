@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MacFresh Tutorials - Learn how to use the macOS app updater with step-by-step guides.">
+    <title>Tutorials - MacFresh</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍃</span>
+                <span class="logo-text">MacFresh</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="tutorials.html" class="active">Tutorials</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            <a href="https://apps.apple.com/app/macfresh" class="btn btn-primary">Download</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Tutorials</h1>
+            <p>Step-by-step guides to help you get the most out of MacFresh.</p>
+        </div>
+    </section>
+
+    <!-- Tutorials Content -->
+    <section class="page-content">
+        <div class="container">
+            
+            <!-- Tutorial Overview Grid -->
+            <div class="tutorial-overview">
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <div class="tutorial-icon">🚀</div>
+                        <h3>Getting Started</h3>
+                        <p>Learn how to set up MacFresh and scan your first apps.</p>
+                        <button class="btn btn-secondary" data-tutorial="tutorial-getting-started">Read Guide</button>
+                    </div>
+                    
+                    <div class="tutorial-card">
+                        <div class="tutorial-icon">🔄</div>
+                        <h3>Updating Apps</h3>
+                        <p>Master the art of updating individual and multiple apps.</p>
+                        <button class="btn btn-secondary" data-tutorial="tutorial-updating">Read Guide</button>
+                    </div>
+                    
+                    <div class="tutorial-card">
+                        <div class="tutorial-icon">⚙️</div>
+                        <h3>Configuring Settings</h3>
+                        <p>Customize MacFresh to fit your workflow.</p>
+                        <button class="btn btn-secondary" data-tutorial="tutorial-settings">Read Guide</button>
+                    </div>
+                    
+                    <div class="tutorial-card">
+                        <div class="tutorial-icon">🔔</div>
+                        <h3>Notifications Setup</h3>
+                        <p>Set up intelligent notifications for updates.</p>
+                        <button class="btn btn-secondary" data-tutorial="tutorial-notifications">Read Guide</button>
+                    </div>
+                    
+                    <div class="tutorial-card">
+                        <div class="tutorial-icon">🔒</div>
+                        <h3>Security Features</h3>
+                        <p>Understand security status and code signing.</p>
+                        <button class="btn btn-secondary" data-tutorial="tutorial-security">Read Guide</button>
+                    </div>
+                    
+                    <div class="tutorial-card">
+                        <div class="tutorial-icon">📋</div>
+                        <h3>Managing Your App List</h3>
+                        <p>Filter, search, and organize your applications.</p>
+                        <button class="btn btn-secondary" data-tutorial="tutorial-managing">Read Guide</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial: Getting Started -->
+            <div id="tutorial-getting-started" class="tutorial-detail" style="display: none;">
+                <button class="btn btn-secondary back-to-tutorials" style="margin-bottom: 32px;">← Back to Tutorials</button>
+                
+                <div class="tutorial-content">
+                    <h2>🚀 Getting Started with MacFresh</h2>
+                    <p>This guide will walk you through setting up MacFresh and scanning your applications for the first time.</p>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">1</div>
+                        <div class="step-content">
+                            <h3>Download and Install</h3>
+                            <p>Download MacFresh from the Mac App Store and install it like any other app. Once installed, open MacFresh from your Applications folder or Launchpad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">2</div>
+                        <div class="step-content">
+                            <h3>Grant Folder Access</h3>
+                            <p>On first launch, MacFresh will ask for permission to access your Applications folder. This is required because macOS apps run in a "sandbox" and can't access files without your permission.</p>
+                            <p>Click <strong>"Grant Access"</strong> when prompted, then select your <strong>/Applications</strong> folder in the file picker and click <strong>"Select"</strong>.</p>
+                            <div class="tip-box">
+                                <strong>💡 Tip:</strong> You can also grant access to additional folders (like /Applications/Utilities or a custom apps folder) in Settings → Folder Access.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">3</div>
+                        <div class="step-content">
+                            <h3>Initial Scan</h3>
+                            <p>MacFresh will automatically scan your Applications folder and analyze each app. This includes:</p>
+                            <ul>
+                                <li>Reading app version information</li>
+                                <li>Detecting update mechanisms (Sparkle, GitHub, etc.)</li>
+                                <li>Checking for available updates</li>
+                                <li>Verifying code signing and notarization</li>
+                            </ul>
+                            <p>The first scan may take a few minutes depending on how many apps you have installed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">4</div>
+                        <div class="step-content">
+                            <h3>Explore the Interface</h3>
+                            <p>Once scanning is complete, you'll see the main window with three sections:</p>
+                            <ul>
+                                <li><strong>Sidebar:</strong> Filter apps by status (All Apps, Updates Available, Up to Date, Ignored) or by update source.</li>
+                                <li><strong>App List:</strong> Shows all scanned apps with version info and update status.</li>
+                                <li><strong>Detail Panel:</strong> Click any app to see detailed information, release notes, and update options.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">5</div>
+                        <div class="step-content">
+                            <h3>Your First Update</h3>
+                            <p>Click on <strong>"Updates Available"</strong> in the sidebar to see apps with pending updates. Select an app to view its release notes, then click <strong>"Update"</strong> to download and install the new version.</p>
+                            <p>Congratulations! You're now ready to keep all your Mac apps up to date with MacFresh.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial: Updating Apps -->
+            <div id="tutorial-updating" class="tutorial-detail" style="display: none;">
+                <button class="btn btn-secondary back-to-tutorials" style="margin-bottom: 32px;">← Back to Tutorials</button>
+                
+                <div class="tutorial-content">
+                    <h2>🔄 Updating Apps</h2>
+                    <p>Learn the different ways to update your applications with MacFresh.</p>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">1</div>
+                        <div class="step-content">
+                            <h3>Update Individual Apps</h3>
+                            <p>To update a single app:</p>
+                            <ol>
+                                <li>Click on the app in the list</li>
+                                <li>Review the release notes in the detail panel</li>
+                                <li>Click the <strong>"Update"</strong> button</li>
+                            </ol>
+                            <p>You can also hover over any app row and click the quick update button that appears.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">2</div>
+                        <div class="step-content">
+                            <h3>Batch Update All Apps</h3>
+                            <p>To update everything at once (requires full version):</p>
+                            <ol>
+                                <li>Click <strong>"Updates Available"</strong> in the sidebar</li>
+                                <li>Click the <strong>"Update All"</strong> button in the toolbar</li>
+                                <li>Confirm when prompted</li>
+                            </ol>
+                            <p>MacFresh will download and process each update in sequence.</p>
+                            <div class="tip-box">
+                                <strong>⌨️ Keyboard Shortcut:</strong> Press <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>U</kbd> to update all apps.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">3</div>
+                        <div class="step-content">
+                            <h3>Understanding Update Types</h3>
+                            <p>MacFresh handles updates differently based on the source:</p>
+                            <ul>
+                                <li><strong>Sparkle apps:</strong> Can trigger native in-place updates</li>
+                                <li><strong>DMG downloads:</strong> Downloaded to ~/Downloads, you drag to Applications</li>
+                                <li><strong>ZIP downloads:</strong> Extracted automatically, move to Applications</li>
+                                <li><strong>App Store apps:</strong> Opens the App Store for manual update</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">4</div>
+                        <div class="step-content">
+                            <h3>Skip or Ignore Updates</h3>
+                            <p>Not every update needs to be installed immediately:</p>
+                            <ul>
+                                <li><strong>Ignore Version:</strong> Skip this specific version but get notified of future updates. Right-click an app and select "Ignore This Version".</li>
+                                <li><strong>Ignore App:</strong> Permanently hide an app from updates. Right-click and select "Ignore App".</li>
+                            </ul>
+                            <p>Manage ignored apps in Settings → Ignored Apps.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">5</div>
+                        <div class="step-content">
+                            <h3>View Update History</h3>
+                            <p>MacFresh keeps track of all updates you've performed. To view history:</p>
+                            <ol>
+                                <li>Select an app in the list</li>
+                                <li>Scroll down in the detail panel</li>
+                                <li>Expand the "Update History" section</li>
+                            </ol>
+                            <p>This shows when you last updated each app and from which version.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial: Settings -->
+            <div id="tutorial-settings" class="tutorial-detail" style="display: none;">
+                <button class="btn btn-secondary back-to-tutorials" style="margin-bottom: 32px;">← Back to Tutorials</button>
+                
+                <div class="tutorial-content">
+                    <h2>⚙️ Configuring Settings</h2>
+                    <p>Customize MacFresh to work exactly how you want it to.</p>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">1</div>
+                        <div class="step-content">
+                            <h3>Accessing Settings</h3>
+                            <p>Open Settings by:</p>
+                            <ul>
+                                <li>Clicking <strong>MacFresh → Settings</strong> in the menu bar</li>
+                                <li>Using the keyboard shortcut <kbd>⌘</kbd> + <kbd>,</kbd></li>
+                                <li>Clicking the gear icon in the toolbar</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">2</div>
+                        <div class="step-content">
+                            <h3>General Settings</h3>
+                            <p>Configure basic behavior:</p>
+                            <ul>
+                                <li><strong>Launch at Login:</strong> Start MacFresh automatically when you log in</li>
+                                <li><strong>Show in Menu Bar:</strong> Add a menu bar icon for quick access</li>
+                                <li><strong>Default View:</strong> Choose what section to show on launch</li>
+                                <li><strong>Download Location:</strong> Where to save downloaded updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">3</div>
+                        <div class="step-content">
+                            <h3>Scan Settings</h3>
+                            <p>Control how and when MacFresh scans:</p>
+                            <ul>
+                                <li><strong>Auto-scan on Launch:</strong> Automatically check for updates when opening MacFresh</li>
+                                <li><strong>Background Scanning:</strong> Periodically check for updates in the background</li>
+                                <li><strong>Scan Frequency:</strong> How often to check (hourly, daily, weekly)</li>
+                                <li><strong>Include Beta Versions:</strong> Show beta releases when available</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">4</div>
+                        <div class="step-content">
+                            <h3>Folder Access</h3>
+                            <p>Manage which folders MacFresh can scan:</p>
+                            <ul>
+                                <li>View currently authorized folders</li>
+                                <li>Add new folders (click "Add Folder")</li>
+                                <li>Remove access (select folder, click "Remove")</li>
+                            </ul>
+                            <div class="tip-box">
+                                <strong>💡 Tip:</strong> Add /Applications/Utilities if you want to include system utilities in your scans.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">5</div>
+                        <div class="step-content">
+                            <h3>Ignored Apps</h3>
+                            <p>Manage apps you've chosen to ignore:</p>
+                            <ul>
+                                <li>View all ignored apps and versions</li>
+                                <li>Un-ignore apps to start receiving updates again</li>
+                                <li>Clear all ignored items at once</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial: Notifications -->
+            <div id="tutorial-notifications" class="tutorial-detail" style="display: none;">
+                <button class="btn btn-secondary back-to-tutorials" style="margin-bottom: 32px;">← Back to Tutorials</button>
+                
+                <div class="tutorial-content">
+                    <h2>🔔 Setting Up Notifications</h2>
+                    <p>Configure MacFresh to alert you about important updates without being annoying.</p>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">1</div>
+                        <div class="step-content">
+                            <h3>Enable Notifications</h3>
+                            <p>First, make sure notifications are enabled:</p>
+                            <ol>
+                                <li>Open Settings → Notifications</li>
+                                <li>Toggle <strong>"Enable Notifications"</strong> on</li>
+                                <li>Make sure MacFresh has notification permission in System Settings → Notifications</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">2</div>
+                        <div class="step-content">
+                            <h3>Choose Notification Types</h3>
+                            <p>Select which events trigger notifications:</p>
+                            <ul>
+                                <li><strong>New Updates Available:</strong> When new versions are detected</li>
+                                <li><strong>Critical Security Updates:</strong> Important security patches</li>
+                                <li><strong>Download Complete:</strong> When an update finishes downloading</li>
+                                <li><strong>Scan Complete:</strong> When background scanning finishes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">3</div>
+                        <div class="step-content">
+                            <h3>Set Notification Frequency</h3>
+                            <p>Control how often you're notified:</p>
+                            <ul>
+                                <li><strong>Immediately:</strong> Get notified as soon as updates are found</li>
+                                <li><strong>Daily Digest:</strong> One summary notification per day</li>
+                                <li><strong>Weekly Digest:</strong> One summary notification per week</li>
+                            </ul>
+                            <div class="tip-box">
+                                <strong>💡 Tip:</strong> Daily digest is a good balance between staying informed and avoiding notification fatigue.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">4</div>
+                        <div class="step-content">
+                            <h3>Menu Bar Badge</h3>
+                            <p>If you enable the menu bar icon, you can also:</p>
+                            <ul>
+                                <li>Show update count badge on the icon</li>
+                                <li>Quickly see available updates from anywhere</li>
+                                <li>Click to open MacFresh directly to updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial: Security -->
+            <div id="tutorial-security" class="tutorial-detail" style="display: none;">
+                <button class="btn btn-secondary back-to-tutorials" style="margin-bottom: 32px;">← Back to Tutorials</button>
+                
+                <div class="tutorial-content">
+                    <h2>🔒 Understanding Security Features</h2>
+                    <p>MacFresh helps you understand the security status of your applications.</p>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">1</div>
+                        <div class="step-content">
+                            <h3>Code Signing Status</h3>
+                            <p>Every app shows its code signing status:</p>
+                            <ul>
+                                <li><strong>🟢 Valid:</strong> App is signed by an identified developer</li>
+                                <li><strong>🟠 Ad-hoc:</strong> App is self-signed (common for open-source)</li>
+                                <li><strong>🔴 Invalid:</strong> Signature is broken or tampered with</li>
+                                <li><strong>⚪ Unsigned:</strong> App has no signature</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">2</div>
+                        <div class="step-content">
+                            <h3>Notarization Status</h3>
+                            <p>Apple's notarization confirms an app has been scanned for malware:</p>
+                            <ul>
+                                <li><strong>✓ Notarized:</strong> Apple has verified the app</li>
+                                <li><strong>✗ Not Notarized:</strong> App hasn't been submitted to Apple</li>
+                            </ul>
+                            <p>Non-notarized apps aren't necessarily unsafe, but notarized apps have an extra layer of verification.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">3</div>
+                        <div class="step-content">
+                            <h3>Viewing Security Details</h3>
+                            <p>To see full security information:</p>
+                            <ol>
+                                <li>Select an app in the list</li>
+                                <li>Look at the detail panel on the right</li>
+                                <li>Expand the "Security" section</li>
+                            </ol>
+                            <p>This shows the developer name, team ID, and signing certificate details.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">4</div>
+                        <div class="step-content">
+                            <h3>Architecture Information</h3>
+                            <p>MacFresh also shows app architecture:</p>
+                            <ul>
+                                <li><strong>Universal:</strong> Native on both Apple Silicon and Intel</li>
+                                <li><strong>Apple Silicon:</strong> Optimized for M1/M2/M3 chips</li>
+                                <li><strong>Intel:</strong> Runs via Rosetta 2 on Apple Silicon Macs</li>
+                            </ul>
+                            <p>Running native apps provides better performance and battery life.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">5</div>
+                        <div class="step-content">
+                            <h3>Update Security</h3>
+                            <p>When downloading updates, MacFresh ensures security by:</p>
+                            <ul>
+                                <li>Using HTTPS for all downloads</li>
+                                <li>Downloading only from official sources</li>
+                                <li>Verifying Sparkle feed signatures when available</li>
+                                <li>Showing the download URL before proceeding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial: Managing -->
+            <div id="tutorial-managing" class="tutorial-detail" style="display: none;">
+                <button class="btn btn-secondary back-to-tutorials" style="margin-bottom: 32px;">← Back to Tutorials</button>
+                
+                <div class="tutorial-content">
+                    <h2>📋 Managing Your App List</h2>
+                    <p>Learn how to filter, search, and organize your applications.</p>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">1</div>
+                        <div class="step-content">
+                            <h3>Using the Sidebar</h3>
+                            <p>The sidebar provides quick filters:</p>
+                            <ul>
+                                <li><strong>All Apps:</strong> Show everything MacFresh has found</li>
+                                <li><strong>Updates Available:</strong> Apps with pending updates (orange badge)</li>
+                                <li><strong>Up to Date:</strong> Apps running the latest version</li>
+                                <li><strong>Ignored:</strong> Apps you've chosen to skip</li>
+                            </ul>
+                            <p>Below these, you can filter by update source (Sparkle, GitHub, etc.).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">2</div>
+                        <div class="step-content">
+                            <h3>Searching Apps</h3>
+                            <p>Use the search bar to find specific apps:</p>
+                            <ul>
+                                <li>Type any part of the app name</li>
+                                <li>Search by developer name</li>
+                                <li>Search by bundle identifier</li>
+                            </ul>
+                            <div class="tip-box">
+                                <strong>⌨️ Keyboard Shortcut:</strong> Press <kbd>⌘</kbd> + <kbd>F</kbd> to focus the search bar.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">3</div>
+                        <div class="step-content">
+                            <h3>Sorting Options</h3>
+                            <p>Sort the app list by:</p>
+                            <ul>
+                                <li><strong>Name:</strong> Alphabetically by app name</li>
+                                <li><strong>Last Updated:</strong> When you last updated each app</li>
+                                <li><strong>Update Available:</strong> Apps with updates first</li>
+                                <li><strong>Size:</strong> Largest apps first</li>
+                            </ul>
+                            <p>Click the column header to sort, click again to reverse.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">4</div>
+                        <div class="step-content">
+                            <h3>Exporting Your App List</h3>
+                            <p>Export a complete inventory of your apps (full version):</p>
+                            <ol>
+                                <li>Go to File → Export App List</li>
+                                <li>Choose format (CSV or JSON)</li>
+                                <li>Select what to include (all apps, with updates, etc.)</li>
+                                <li>Click Export and choose save location</li>
+                            </ol>
+                            <p>Great for documentation, IT audits, or migrating to a new Mac.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-indicator">5</div>
+                        <div class="step-content">
+                            <h3>Keyboard Navigation</h3>
+                            <p>Navigate efficiently with keyboard shortcuts:</p>
+                            <table class="shortcuts-table">
+                                <tr>
+                                    <td><kbd>↑</kbd> / <kbd>↓</kbd></td>
+                                    <td>Move between apps</td>
+                                </tr>
+                                <tr>
+                                    <td><kbd>⌘</kbd> + <kbd>1-4</kbd></td>
+                                    <td>Switch sidebar sections</td>
+                                </tr>
+                                <tr>
+                                    <td><kbd>Space</kbd></td>
+                                    <td>Quick Look selected app</td>
+                                </tr>
+                                <tr>
+                                    <td><kbd>⌘</kbd> + <kbd>I</kbd></td>
+                                    <td>Show detailed info</td>
+                                </tr>
+                                <tr>
+                                    <td><kbd>⌘</kbd> + <kbd>⌫</kbd></td>
+                                    <td>Ignore selected app</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Tutorials Coming Soon -->
+            <div class="content-section text-center" style="margin-top: 64px;">
+                <h2>🎬 Video Tutorials</h2>
+                <p style="margin-bottom: 16px;">Video tutorials are coming soon! In the meantime, check out our written guides above or contact support if you need help.</p>
+                <a href="support.html" class="btn btn-secondary">Contact Support</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">🍃</span>
+                        <span class="logo-text">MacFresh</span>
+                    </a>
+                    <p>Keep your Mac fresh.<br>The universal app updater for macOS.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Us</a></li>
+                        <li><a href="faq.html">Help Center</a></li>
+                        <li><a href="mailto:mip@gmx.biz">Email Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html#gdpr">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 MacFresh. All rights reserved.</p>
+                <p>Made with ❤️ for Mac users everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

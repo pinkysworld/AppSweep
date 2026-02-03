@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MacFresh - Keep your Mac fresh. The universal app updater for macOS. One-click updates for all your apps.">
+    <meta name="keywords" content="macOS, app updater, Mac apps, software updates, Sparkle, GitHub releases, App Store">
+    <meta name="author" content="MacFresh">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="MacFresh - Universal App Updater for macOS">
+    <meta property="og:description" content="Keep your Mac fresh. One-click updates for all your apps.">
+    <meta property="og:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
+    <meta property="og:url" content="https://pinkysworld.github.io/MacFresh/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MacFresh - Universal App Updater for macOS">
+    <meta name="twitter:description" content="Keep your Mac fresh. One-click updates for all your apps.">
+    
+    <title>MacFresh - Universal App Updater for macOS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍃</span>
+                <span class="logo-text">MacFresh</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            <a href="https://apps.apple.com/app/macfresh" class="btn btn-primary">Download</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <span>🎉</span> Now available on the Mac App Store
+            </div>
+            <h1>Keep your Mac <span class="gradient-text">fresh</span></h1>
+            <p class="hero-subtitle">The universal app updater for macOS. One-click updates for all your apps — Sparkle, GitHub, Electron, App Store, and more.</p>
+            <div class="hero-buttons">
+                <a href="https://apps.apple.com/app/macfresh" class="btn btn-primary btn-large">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 16.97 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                    </svg>
+                    Download on Mac App Store
+                </a>
+                <a href="#features" class="btn btn-secondary btn-large">Learn More</a>
+            </div>
+            <div class="hero-meta">
+                <span>macOS 14.0+ (Sonoma)</span>
+                <span class="separator">•</span>
+                <span>Apple Silicon & Intel</span>
+                <span class="separator">•</span>
+                <span>$17.99 one-time</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="app-window">
+                <div class="window-header">
+                    <div class="window-buttons">
+                        <span class="btn-close"></span>
+                        <span class="btn-minimize"></span>
+                        <span class="btn-maximize"></span>
+                    </div>
+                    <span class="window-title">MacFresh</span>
+                </div>
+                <div class="window-content">
+                    <div class="sidebar-mock">
+                        <div class="sidebar-item active">
+                            <span>📦</span> All Apps
+                            <span class="badge">47</span>
+                        </div>
+                        <div class="sidebar-item update">
+                            <span>🔄</span> Updates
+                            <span class="badge orange">5</span>
+                        </div>
+                        <div class="sidebar-item">
+                            <span>✓</span> Up to Date
+                            <span class="badge">42</span>
+                        </div>
+                    </div>
+                    <div class="content-mock">
+                        <div class="app-row">
+                            <div class="app-icon">🎨</div>
+                            <div class="app-info">
+                                <span class="app-name">Sketch</span>
+                                <span class="app-version">99.0 → 100.1</span>
+                            </div>
+                            <button class="update-btn">Update</button>
+                        </div>
+                        <div class="app-row">
+                            <div class="app-icon">💻</div>
+                            <div class="app-info">
+                                <span class="app-name">VS Code</span>
+                                <span class="app-version">1.85 → 1.86</span>
+                            </div>
+                            <button class="update-btn">Update</button>
+                        </div>
+                        <div class="app-row">
+                            <div class="app-icon">🦊</div>
+                            <div class="app-info">
+                                <span class="app-name">Firefox</span>
+                                <span class="app-version">121.0 → 122.0</span>
+                            </div>
+                            <button class="update-btn">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-content">
+                <span class="section-badge">The Problem</span>
+                <h2>Keeping Mac apps updated is a mess</h2>
+                <p>With MacUpdater discontinued and no built-in solution in macOS, keeping third-party apps updated is harder than ever. Security vulnerabilities pile up, new features are missed, and manually checking each app is tedious.</p>
+                <div class="problem-quotes">
+                    <blockquote>
+                        "MacOS still has no system-level updater for third-party apps."
+                        <cite>— Community Discussion</cite>
+                    </blockquote>
+                    <blockquote>
+                        "Outdated software is one of the most common sources of security vulnerabilities."
+                        <cite>— Security Expert</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2>Everything you need to stay updated</h2>
+                <p>MacFresh detects updates from multiple sources and lets you update all apps with a single click.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Universal Detection</h3>
+                    <p>Automatically detects updates from Sparkle feeds, GitHub Releases, Electron apps, App Store, and our crowdsourced database.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>One-Click Updates</h3>
+                    <p>Update individual apps or batch update everything at once. No more hunting for download links.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Notifications</h3>
+                    <p>Get notified when updates are available. Configure frequency and importance levels to match your workflow.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>All scans happen locally on your Mac. No registration required. No usage tracking. Database queries are anonymized.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Security Status</h3>
+                    <p>View code signing and notarization status for all apps. Identify potential security risks at a glance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Release Notes</h3>
+                    <p>Read what's new before updating. See detailed changelogs and decide which updates matter to you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Background Scanning</h3>
+                    <p>MacFresh quietly checks for updates in the background and notifies you when something's available.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>App Inventory Export</h3>
+                    <p>Export a complete list of all installed apps with versions. Perfect for documentation or IT compliance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎛️</div>
+                    <h3>Flexible Ignore Options</h3>
+                    <p>Skip specific apps or versions. Perfect for avoiding breaking changes or staying on LTS versions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update Sources Section -->
+    <section class="sources-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Coverage</span>
+                <h2>Updates from everywhere</h2>
+                <p>MacFresh supports all major update mechanisms used by Mac apps.</p>
+            </div>
+            
+            <div class="sources-grid">
+                <div class="source-card">
+                    <div class="source-icon sparkle">✨</div>
+                    <h3>Sparkle</h3>
+                    <p>The most popular update framework for Mac apps. Used by thousands of indie apps.</p>
+                </div>
+                
+                <div class="source-card">
+                    <div class="source-icon github">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <h3>GitHub Releases</h3>
+                    <p>Automatic detection of new releases for apps hosted on GitHub.</p>
+                </div>
+                
+                <div class="source-card">
+                    <div class="source-icon electron">⚛️</div>
+                    <h3>Electron Apps</h3>
+                    <p>VS Code, Slack, Discord, and other Electron-based apps are fully supported.</p>
+                </div>
+                
+                <div class="source-card">
+                    <div class="source-icon appstore">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 16.97 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>Mac App Store</h3>
+                    <p>See pending App Store updates alongside your other apps.</p>
+                </div>
+                
+                <div class="source-card">
+                    <div class="source-icon crowdsourced">👥</div>
+                    <h3>Crowdsourced</h3>
+                    <p>Our community-maintained database covers apps without automatic update mechanisms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">How It Works</span>
+                <h2>Simple as 1-2-3</h2>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Grant Access</h3>
+                    <p>Select your Applications folder. MacFresh uses secure, sandboxed access — your data stays private.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Scan Apps</h3>
+                    <p>MacFresh analyzes all installed apps and checks multiple sources for available updates.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Update All</h3>
+                    <p>Review changes and update everything with a single click. Downloads go to your Downloads folder.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pricing</span>
+                <h2>Simple, fair pricing</h2>
+                <p>One-time purchase. No subscriptions. Free updates forever.</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <div class="price">$0</div>
+                        <p>Try before you buy</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Scan all installed apps</li>
+                        <li><span class="check">✓</span> View available updates</li>
+                        <li><span class="check">✓</span> Read release notes</li>
+                        <li><span class="check">✓</span> Update 3 apps per day</li>
+                        <li><span class="cross">✗</span> Batch updates</li>
+                        <li><span class="cross">✗</span> Background scanning</li>
+                        <li><span class="cross">✗</span> Update notifications</li>
+                        <li><span class="cross">✗</span> Export app inventory</li>
+                    </ul>
+                    <a href="https://apps.apple.com/app/macfresh" class="btn btn-secondary">Download Free</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Full Version</h3>
+                        <div class="price">$17.99 <span class="price-note">/ €19.99</span></div>
+                        <p>One-time purchase</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Scan all installed apps</li>
+                        <li><span class="check">✓</span> View available updates</li>
+                        <li><span class="check">✓</span> Read release notes</li>
+                        <li><span class="check">✓</span> <strong>Unlimited updates</strong></li>
+                        <li><span class="check">✓</span> <strong>Batch update all apps</strong></li>
+                        <li><span class="check">✓</span> <strong>Background scanning</strong></li>
+                        <li><span class="check">✓</span> <strong>Smart notifications</strong></li>
+                        <li><span class="check">✓</span> <strong>Export app inventory</strong></li>
+                    </ul>
+                    <a href="https://apps.apple.com/app/macfresh" class="btn btn-primary">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loved by Mac users</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Finally, a proper replacement for MacUpdater! MacFresh just works and the interface is beautiful."</p>
+                    <div class="testimonial-author">
+                        <strong>Alex M.</strong>
+                        <span>Developer</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"I manage 5 Macs and MacFresh saves me hours every week. The batch update feature is a lifesaver."</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah K.</strong>
+                        <span>IT Admin</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"No Homebrew required! This is exactly what I needed. Simple, native, and effective."</p>
+                    <div class="testimonial-author">
+                        <strong>Michael R.</strong>
+                        <span>Designer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to keep your Mac fresh?</h2>
+            <p>Download MacFresh today and never worry about outdated apps again.</p>
+            <a href="https://apps.apple.com/app/macfresh" class="btn btn-primary btn-large">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 16.97 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                </svg>
+                Download on Mac App Store
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">🍃</span>
+                        <span class="logo-text">MacFresh</span>
+                    </a>
+                    <p>Keep your Mac fresh.<br>The universal app updater for macOS.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Us</a></li>
+                        <li><a href="faq.html">Help Center</a></li>
+                        <li><a href="mailto:mip@gmx.biz">Email Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html#gdpr">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 MacFresh. All rights reserved.</p>
+                <p>Made with ❤️ for Mac users everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
