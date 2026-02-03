@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MacFresh - Keep your Mac fresh. The universal app updater for macOS. One-click updates for all your apps.">
+    <meta name="description" content="MacFresh - Keep your Mac fresh. The universal app updater for macOS. Find updates and open official update links with one click.">
     <meta name="keywords" content="macOS, app updater, Mac apps, software updates, Sparkle, GitHub releases, App Store">
     <meta name="author" content="MacFresh">
-    
     <!-- Open Graph -->
     <meta property="og:title" content="MacFresh - Universal App Updater for macOS">
-    <meta property="og:description" content="Keep your Mac fresh. One-click updates for all your apps.">
+    <meta property="og:description" content="MacFresh - Keep your Mac fresh. The universal app updater for macOS. Find updates and open official update links with one click.">
     <meta property="og:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
     <meta property="og:url" content="https://pinkysworld.github.io/MacFresh/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MacFresh">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MacFresh - Universal App Updater for macOS">
-    <meta name="twitter:description" content="Keep your Mac fresh. One-click updates for all your apps.">
-    
+    <meta name="twitter:description" content="MacFresh - Keep your Mac fresh. The universal app updater for macOS. Find updates and open official update links with one click.">
+    <meta name="twitter:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
+
     <title>MacFresh - Universal App Updater for macOS</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
@@ -32,7 +34,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">🍃</span>
+                <img class="logo-icon" src="images/favicon.png" alt="MacFresh icon">
                 <span class="logo-text">MacFresh</span>
             </a>
             <ul class="nav-links">
@@ -58,7 +60,7 @@
                 <span>🎉</span> Now available on the Mac App Store
             </div>
             <h1>Keep your Mac <span class="gradient-text">fresh</span></h1>
-            <p class="hero-subtitle">The universal app updater for macOS. One-click updates for all your apps — Sparkle, GitHub, Electron, App Store, and more.</p>
+            <p class="hero-subtitle">The universal app updater for macOS. Find updates for all your apps and open official update links with one click — Sparkle, GitHub, Electron, App Store, and more.</p>
             <div class="hero-buttons">
                 <a href="https://apps.apple.com/app/macfresh" class="btn btn-primary btn-large">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -67,6 +69,9 @@
                     Download on Mac App Store
                 </a>
                 <a href="#features" class="btn btn-secondary btn-large">Learn More</a>
+            </div>
+            <div class="hero-note">
+                Mac App Store edition opens official update links for manual installs (no auto-downloads or auto-installs).
             </div>
             <div class="hero-meta">
                 <span>macOS 14.0+ (Sonoma)</span>
@@ -159,7 +164,7 @@
             <div class="section-header">
                 <span class="section-badge">Features</span>
                 <h2>Everything you need to stay updated</h2>
-                <p>MacFresh detects updates from multiple sources and lets you update all apps with a single click.</p>
+                <p>MacFresh detects updates from multiple sources and opens official update links with a single click.</p>
             </div>
             
             <div class="features-grid">
@@ -171,14 +176,14 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>One-Click Updates</h3>
-                    <p>Update individual apps or batch update everything at once. No more hunting for download links.</p>
+                    <h3>One-Click Update Links</h3>
+                    <p>Open official update pages for individual apps or batch open them all at once. No more hunting for download links.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🔔</div>
                     <h3>Smart Notifications</h3>
-                    <p>Get notified when updates are available. Configure frequency and digest summaries to match your workflow.</p>
+                    <p>Get notified when updates are available and choose digest summaries to reduce notification fatigue.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -201,8 +206,8 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">⏰</div>
-                    <h3>Scheduled Updates</h3>
-                    <p>Set specific times for update checks and installs. Configure quiet hours and update windows.</p>
+                    <h3>Manual Control</h3>
+                    <p>The Mac App Store edition opens official update links so you stay in control of when and how updates are installed.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -295,7 +300,7 @@
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <h3>Update All</h3>
-                    <p>Review changes and update everything with a single click. Downloads go to your Downloads folder.</p>
+                    <p>Review changes and open official update links with a single click. Install manually from the source you trust.</p>
                 </div>
             </div>
         </div>
@@ -320,12 +325,10 @@
                     </div>
                     <ul class="pricing-features">
                         <li><span class="check">✓</span> Scan all installed applications</li>
-                        <li><span class="check">✓</span> Unlimited app updates</li>
-                        <li><span class="check">✓</span> Batch update all apps at once</li>
-                        <li><span class="check">✓</span> Automatic background scanning</li>
+                        <li><span class="check">✓</span> Unlimited update detection</li>
+                        <li><span class="check">✓</span> Batch open update links</li>
                         <li><span class="check">✓</span> Smart update notifications</li>
                         <li><span class="check">✓</span> Detailed release notes</li>
-                        <li><span class="check">✓</span> Scheduled update windows</li>
                         <li><span class="check">✓</span> Security and code signing status</li>
                         <li><span class="check">✓</span> Export app inventory</li>
                         <li><span class="check">✓</span> Ignore apps and versions</li>
@@ -395,7 +398,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-icon">🍃</span>
+                        <img class="logo-icon" src="images/favicon.png" alt="MacFresh icon">
                         <span class="logo-text">MacFresh</span>
                     </a>
                     <p>Keep your Mac fresh.<br>The universal app updater for macOS.</p>

@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MacFresh FAQ - Frequently asked questions about the macOS app updater.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ - MacFresh">
+    <meta property="og:description" content="MacFresh FAQ - Frequently asked questions about the macOS app updater.">
+    <meta property="og:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
+    <meta property="og:url" content="https://pinkysworld.github.io/MacFresh/faq.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MacFresh">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ - MacFresh">
+    <meta name="twitter:description" content="MacFresh FAQ - Frequently asked questions about the macOS app updater.">
+    <meta name="twitter:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
+
     <title>FAQ - MacFresh</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
@@ -17,7 +32,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">🍃</span>
+                <img class="logo-icon" src="images/favicon.png" alt="MacFresh icon">
                 <span class="logo-text">MacFresh</span>
             </a>
             <ul class="nav-links">
@@ -41,6 +56,7 @@
         <div class="container">
             <h1>Frequently Asked Questions</h1>
             <p>Find answers to common questions about MacFresh.</p>
+            <p class="page-note">Mac App Store edition opens official update links for manual installs (no auto-downloads or auto-installs).</p>
         </div>
     </section>
 
@@ -57,8 +73,8 @@
                         <button class="faq-question">What is MacFresh?</button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                <p>MacFresh is a universal app updater for macOS that helps you keep all your applications up to date. It automatically scans your Applications folder, detects installed apps, and checks multiple sources (Sparkle feeds, GitHub Releases, Electron update mechanisms, and the Mac App Store) for available updates.</p>
-                                <p>With MacFresh, you can update all your apps with a single click instead of manually checking each app's website or waiting for update prompts.</p>
+                                <p>MacFresh is a universal app updater for macOS that helps you keep all your applications up to date. It scans your Applications folder, detects installed apps, and checks multiple sources (Sparkle feeds, GitHub Releases, Electron update mechanisms, and the Mac App Store) for available updates.</p>
+                                <p>With MacFresh, you can open official update links for all your apps with a single click instead of manually hunting for download pages.</p>
                             </div>
                         </div>
                     </div>
@@ -96,8 +112,8 @@
                                 <ul>
                                     <li><strong>Sandboxed:</strong> Runs in Apple's App Sandbox with limited system access.</li>
                                     <li><strong>Code-signed & notarized:</strong> Verified by Apple for malware-free distribution.</li>
-                                    <li><strong>No admin access required:</strong> Downloads go to your Downloads folder; you install manually.</li>
-                                    <li><strong>Official sources only:</strong> Updates are downloaded from official developer sources.</li>
+                                    <li><strong>No admin access required:</strong> MacFresh opens official update links; you install manually.</li>
+                                    <li><strong>Official sources only:</strong> Update links point to official developer sources.</li>
                                 </ul>
                             </div>
                         </div>
@@ -128,13 +144,13 @@
                         <button class="faq-question">Does MacFresh automatically install updates?</button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                <p>MacFresh downloads updates to your Downloads folder and helps you install them, but it doesn't automatically replace apps without your knowledge. This is by design:</p>
+                                <p>No. The Mac App Store edition opens official update links so you can download and install updates manually. This keeps you in control:</p>
                                 <ul>
-                                    <li>You maintain full control over what gets updated</li>
+                                    <li>You decide when to download and install</li>
                                     <li>You can review release notes before updating</li>
-                                    <li>You can skip versions you don't want</li>
+                                    <li>You can skip versions you don’t want</li>
                                 </ul>
-                                <p>For apps using Sparkle, MacFresh can trigger their native update mechanisms for seamless in-place updates.</p>
+                                <p>For Mac App Store apps, MacFresh opens the App Store to the app’s page.</p>
                             </div>
                         </div>
                     </div>
@@ -167,7 +183,7 @@
                         <button class="faq-question">Can I export my app list?</button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                <p>Yes! The full version of MacFresh lets you export a complete inventory of your installed apps including:</p>
+                                <p>Yes! MacFresh lets you export a complete inventory of your installed apps including:</p>
                                 <ul>
                                     <li>App name and bundle identifier</li>
                                     <li>Current version number</li>
@@ -244,9 +260,9 @@
                                 <ul>
                                     <li><strong>Code Signing:</strong> Whether the app is signed by a verified developer</li>
                                     <li><strong>Notarization:</strong> Whether Apple has verified the app is free of malware</li>
-                                    <li><strong>Source:</strong> Where the update is being downloaded from</li>
+                                    <li><strong>Source:</strong> Where the update link points</li>
                                 </ul>
-                                <p>Updates are always downloaded from official sources (developer websites, GitHub, App Store) — never from MacFresh servers.</p>
+                                <p>Update links point to official sources (developer websites, GitHub, App Store) — never to MacFresh servers.</p>
                             </div>
                         </div>
                     </div>
@@ -263,9 +279,8 @@
                                 <p>MacFresh is a one-time purchase of $17.99 (or €19.99). This includes:</p>
                                 <ul>
                                     <li>Full app scanning capabilities</li>
-                                    <li>Unlimited app updates</li>
-                                    <li>Batch update all apps at once</li>
-                                    <li>Automatic background scanning</li>
+                                    <li>Unlimited update detection</li>
+                                    <li>Batch open update links</li>
                                     <li>Smart update notifications</li>
                                     <li>Detailed release notes</li>
                                     <li>App inventory export</li>
@@ -354,17 +369,17 @@
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-question">Downloads are failing</button>
+                        <button class="faq-question">An update link won’t open or a download fails</button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                <p>If downloads are failing:</p>
+                                <p>If an update link won’t open or a download fails:</p>
                                 <ul>
+                                    <li><strong>Try the link again:</strong> Re-open the update link from MacFresh.</li>
                                     <li><strong>Check your connection:</strong> Make sure you have a stable internet connection.</li>
-                                    <li><strong>Check disk space:</strong> Ensure you have enough free space in your Downloads folder.</li>
                                     <li><strong>Server issues:</strong> The developer's server might be temporarily unavailable. Try again later.</li>
                                     <li><strong>Firewall/VPN:</strong> Check if a firewall or VPN is blocking the download.</li>
                                 </ul>
-                                <p>If the problem persists, try downloading directly from the app's website.</p>
+                                <p>If the problem persists, download directly from the app’s website.</p>
                             </div>
                         </div>
                     </div>
@@ -436,9 +451,9 @@
                                 <p>MacFresh runs in Apple's App Sandbox, which restricts direct modification of files in /Applications. This is a security feature that protects your system.</p>
                                 <p>Instead, MacFresh:</p>
                                 <ul>
-                                    <li>Downloads updates to your Downloads folder</li>
-                                    <li>Helps you through the installation process</li>
-                                    <li>Can trigger native Sparkle updaters for in-place updates</li>
+                                    <li>Opens official update links for manual installation</li>
+                                    <li>Opens the Mac App Store for App Store apps</li>
+                                    <li>Lets you stay in control of when updates are installed</li>
                                 </ul>
                                 <p>This approach maintains security while still making updates convenient.</p>
                             </div>
@@ -476,7 +491,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-icon">🍃</span>
+                        <img class="logo-icon" src="images/favicon.png" alt="MacFresh icon">
                         <span class="logo-text">MacFresh</span>
                     </a>
                     <p>Keep your Mac fresh.<br>The universal app updater for macOS.</p>

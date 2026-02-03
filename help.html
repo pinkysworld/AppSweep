@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MacFresh Help Center - Comprehensive guide to using MacFresh, the universal app updater for macOS.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Help Center - MacFresh">
+    <meta property="og:description" content="MacFresh Help Center - Comprehensive guide to using MacFresh, the universal app updater for macOS.">
+    <meta property="og:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
+    <meta property="og:url" content="https://pinkysworld.github.io/MacFresh/help.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MacFresh">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Help Center - MacFresh">
+    <meta name="twitter:description" content="MacFresh Help Center - Comprehensive guide to using MacFresh, the universal app updater for macOS.">
+    <meta name="twitter:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
+
     <title>Help Center - MacFresh</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         .help-container {
@@ -278,7 +293,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">🍃</span>
+                <img class="logo-icon" src="images/favicon.png" alt="MacFresh icon">
                 <span class="logo-text">MacFresh</span>
             </a>
             <ul class="nav-links">
@@ -336,7 +351,6 @@
             <ul>
                 <li><a href="#settings-general">General Settings</a></li>
                 <li><a href="#settings-updates">Update Settings</a></li>
-                <li><a href="#settings-schedule">Schedule Settings</a></li>
                 <li><a href="#settings-ignored">Ignored Apps</a></li>
                 <li><a href="#settings-reports">Reports &amp; Export</a></li>
                 <li><a href="#settings-about">About</a></li>
@@ -354,6 +368,7 @@
         <main class="help-content">
             <h1>MacFresh User Guide</h1>
             <p class="help-intro">Welcome to MacFresh, the universal app updater for macOS. This comprehensive guide will help you get the most out of MacFresh and keep all your applications up to date.</p>
+            <p class="page-note">Mac App Store edition opens official update links for manual installs (no auto-downloads or auto-installs).</p>
 
             <div class="toc-quick">
                 <h3>Quick Navigation</h3>
@@ -370,17 +385,21 @@
 
             <!-- GETTING STARTED -->
             <h2 id="introduction">Introduction</h2>
-            <p>MacFresh is a powerful yet easy-to-use application that helps you keep all your Mac applications up to date. Unlike the Mac App Store, which only handles apps purchased through Apple, MacFresh can detect and update apps from any source.</p>
+            <p>MacFresh is a powerful yet easy-to-use application that helps you keep all your Mac applications up to date. Unlike the Mac App Store, which only handles apps purchased through Apple, MacFresh can detect updates from any source and open the official update link for you.</p>
             
             <h3>What MacFresh Does</h3>
             <ul>
                 <li>Scans your Mac for all installed applications</li>
                 <li>Detects available updates from multiple sources (Sparkle, GitHub, Electron, App Store, and more)</li>
-                <li>Downloads and installs updates with a single click</li>
+                <li>Opens official update links with a single click for manual installation</li>
                 <li>Keeps track of your update history</li>
                 <li>Notifies you when new updates are available</li>
                 <li>Shows security status for all your applications</li>
             </ul>
+            <div class="help-card info">
+                <h4>ℹ️ Mac App Store Edition</h4>
+                <p>The Mac App Store version opens official update links and App Store pages. It does not download or install updates automatically.</p>
+            </div>
 
             <h3>System Requirements</h3>
             <ul>
@@ -401,7 +420,7 @@
             </ol>
 
             <h2 id="granting-access">Granting Folder Access</h2>
-            <p>MacFresh needs permission to access your Applications folder to scan for installed apps and perform updates. This is a security feature of macOS called "sandboxing."</p>
+            <p>MacFresh needs permission to access your Applications folder to scan for installed apps and check for updates. This is a security feature of macOS called "sandboxing."</p>
             
             <h3>How to Grant Access</h3>
             <ol>
@@ -517,7 +536,7 @@
 
             <h3>Actions in Details Panel</h3>
             <ul>
-                <li><strong>Update:</strong> Download and install the latest version</li>
+                <li><strong>Open Update Link:</strong> Open the official update page for manual installation</li>
                 <li><strong>Show in Finder:</strong> Open the folder containing the app</li>
                 <li><strong>Ignore App:</strong> Add to the ignore list</li>
                 <li><strong>Ignore This Version:</strong> Skip this specific update</li>
@@ -529,7 +548,7 @@
             <h3>Toolbar Buttons</h3>
             <ul>
                 <li><strong>Refresh / Rescan:</strong> Check all apps for updates</li>
-                <li><strong>Update All:</strong> Download and install all available updates</li>
+                <li><strong>Open Update Links:</strong> Open official update pages for all available updates</li>
                 <li><strong>Filter:</strong> Filter the app list by various criteria</li>
                 <li><strong>Search:</strong> Find a specific app by name</li>
                 <li><strong>Settings:</strong> Open the settings window</li>
@@ -537,10 +556,18 @@
 
             <!-- UPDATING APPS -->
             <h2 id="check-updates">Checking for Updates</h2>
-            <p>MacFresh can check for updates automatically or manually.</p>
+            <p>MacFresh checks for updates when you request a scan. You can also enable periodic checks in Settings if you want automatic reminders.</p>
             
-            <h3>Automatic Update Checks</h3>
-            <p>By default, MacFresh periodically checks for updates in the background. You can configure the frequency in Settings:</p>
+            <h3>Manual Update Checks</h3>
+            <p>To manually check for updates:</p>
+            <ol>
+                <li>Click the Refresh button in the toolbar, or</li>
+                <li>Press <span class="kbd">⌘</span> + <span class="kbd">R</span>, or</li>
+                <li>Select "Check for Updates" from the File menu</li>
+            </ol>
+            
+            <h3>Optional Automatic Checks</h3>
+            <p>If you enable automatic checks in Settings, you can choose how often MacFresh runs a background scan:</p>
             <ul>
                 <li>Every hour</li>
                 <li>Every 6 hours</li>
@@ -550,28 +577,20 @@
                 <li>Manual only</li>
             </ul>
 
-            <h3>Manual Update Checks</h3>
-            <p>To manually check for updates:</p>
-            <ol>
-                <li>Click the Refresh button in the toolbar, or</li>
-                <li>Press <span class="kbd">⌘</span> + <span class="kbd">R</span>, or</li>
-                <li>Select "Check for Updates" from the File menu</li>
-            </ol>
-
             <h2 id="single-update">Updating Single Apps</h2>
             <p>To update an individual application:</p>
             <ol>
                 <li>Find the app in the list (use search if needed)</li>
-                <li>Click the "Update" button next to the app name, or</li>
-                <li>Select the app and click "Update" in the details panel</li>
+                <li>Click the "Open Update Link" button next to the app name, or</li>
+                <li>Select the app and click "Open Update Link" in the details panel</li>
             </ol>
             
             <h3>What Happens During an Update</h3>
             <ol>
-                <li>MacFresh downloads the update file to your Downloads folder</li>
-                <li>The download progress is displayed</li>
-                <li>Once complete, the installer opens or the app is replaced automatically</li>
-                <li>You may need to close the app if it is currently running</li>
+                <li>MacFresh opens the official update link (or the App Store page for App Store apps)</li>
+                <li>Download the installer from the official source</li>
+                <li>Open the installer and complete the update manually</li>
+                <li>If a disk image doesn’t open automatically, open it from your Downloads folder</li>
             </ol>
 
             <div class="help-card warning">
@@ -580,21 +599,20 @@
             </div>
 
             <h2 id="batch-update">Batch Updates</h2>
-            <p>One of MacFresh's most powerful features is the ability to update multiple apps at once.</p>
+            <p>MacFresh makes it easy to open update links for multiple apps at once.</p>
             
-            <h3>Update All Apps</h3>
+            <h3>Open Update Links for All Apps</h3>
             <ol>
-                <li>Click the "Update All" button in the toolbar, or</li>
+                <li>Click the "Open Update Links" button in the toolbar, or</li>
                 <li>Press <span class="kbd">⌘</span> + <span class="kbd">⇧</span> + <span class="kbd">U</span></li>
-                <li>Confirm the batch update when prompted</li>
             </ol>
 
-            <h3>Selective Batch Update</h3>
-            <p>To update only selected apps:</p>
+            <h3>Open Update Links for Selected Apps</h3>
+            <p>To open update links for selected apps:</p>
             <ol>
                 <li>Hold <span class="kbd">⌘</span> and click to select multiple apps</li>
-                <li>Right-click and select "Update Selected", or</li>
-                <li>Click the "Update Selected" button that appears</li>
+                <li>Right-click and select "Open Update Links", or</li>
+                <li>Click the "Open Update Links" button that appears</li>
             </ol>
 
             <h2 id="update-sources">Update Sources</h2>
@@ -603,7 +621,7 @@
             <div class="feature-grid">
                 <div class="feature-item">
                     <h4>✨ Sparkle</h4>
-                    <p>The most common update framework for Mac apps. Used by thousands of independent developers. Updates are downloaded directly from the developer's server.</p>
+                    <p>The most common update framework for Mac apps. Used by thousands of independent developers. Update links point directly to the developer’s server.</p>
                 </div>
                 <div class="feature-item">
                     <h4>🐙 GitHub Releases</h4>
@@ -648,7 +666,6 @@
                 <li><strong>Show in Menu Bar:</strong> Display a MacFresh icon in the menu bar for quick access</li>
                 <li><strong>Show Dock Icon:</strong> Show or hide the MacFresh icon in the Dock</li>
                 <li><strong>Application Folders:</strong> Manage which folders MacFresh scans for applications</li>
-                <li><strong>Downloads Location:</strong> Choose where update files are saved</li>
             </ul>
 
             <h2 id="settings-updates">Update Settings</h2>
@@ -657,26 +674,10 @@
             <h3>Update Tab Options</h3>
             <ul>
                 <li><strong>Check Frequency:</strong> How often MacFresh looks for new updates (hourly, daily, weekly, etc.)</li>
-                <li><strong>Automatic Downloads:</strong> Automatically download updates in the background</li>
-                <li><strong>Automatic Installation:</strong> Install updates automatically (requires confirmation)</li>
                 <li><strong>Include Beta Versions:</strong> Show pre-release and beta versions of apps</li>
                 <li><strong>Update Sources:</strong> Enable or disable specific update sources</li>
+                <li><strong>Manual Updates:</strong> Open official update links for installation</li>
             </ul>
-
-            <h2 id="settings-schedule">Schedule Settings</h2>
-            <p>Set specific times for update checks and installations.</p>
-            
-            <h3>Schedule Options</h3>
-            <ul>
-                <li><strong>Quiet Hours:</strong> Define times when MacFresh should not show notifications or perform updates</li>
-                <li><strong>Update Window:</strong> Specify preferred times for installing updates</li>
-                <li><strong>Day Preferences:</strong> Choose which days of the week to check for updates</li>
-            </ul>
-
-            <div class="help-card info">
-                <h4>ℹ️ Example Schedule</h4>
-                <p>You might configure MacFresh to check for updates at 9 AM every weekday, with quiet hours from 10 PM to 7 AM. This ensures you are notified about updates when you start work, but are not disturbed in the evening.</p>
-            </div>
 
             <h2 id="settings-ignored">Ignored Apps</h2>
             <p>Manage which apps MacFresh should ignore.</p>
@@ -771,7 +772,7 @@
             </ul>
 
             <h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
-            <p>MacFresh supports many keyboard shortcuts to help you work faster.</p>
+            <p>MacFresh supports keyboard shortcuts to help you work faster.</p>
             
             <table class="shortcut-table">
                 <thead>
@@ -783,47 +784,23 @@
                 <tbody>
                     <tr>
                         <td><span class="kbd">⌘</span> + <span class="kbd">R</span></td>
-                        <td>Refresh / Check for updates</td>
+                        <td>Scan for updates</td>
                     </tr>
                     <tr>
                         <td><span class="kbd">⌘</span> + <span class="kbd">⇧</span> + <span class="kbd">U</span></td>
-                        <td>Update all apps</td>
-                    </tr>
-                    <tr>
-                        <td><span class="kbd">⌘</span> + <span class="kbd">F</span></td>
-                        <td>Search for an app</td>
+                        <td>Open update links</td>
                     </tr>
                     <tr>
                         <td><span class="kbd">⌘</span> + <span class="kbd">,</span></td>
                         <td>Open Settings</td>
                     </tr>
                     <tr>
-                        <td><span class="kbd">⌘</span> + <span class="kbd">1</span></td>
-                        <td>Show All Apps</td>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">?</span></td>
+                        <td>Open Help</td>
                     </tr>
                     <tr>
-                        <td><span class="kbd">⌘</span> + <span class="kbd">2</span></td>
-                        <td>Show Updates Available</td>
-                    </tr>
-                    <tr>
-                        <td><span class="kbd">⌘</span> + <span class="kbd">3</span></td>
-                        <td>Show Up to Date</td>
-                    </tr>
-                    <tr>
-                        <td><span class="kbd">⌘</span> + <span class="kbd">I</span></td>
-                        <td>Ignore selected app</td>
-                    </tr>
-                    <tr>
-                        <td><span class="kbd">⌘</span> + <span class="kbd">⇧</span> + <span class="kbd">F</span></td>
-                        <td>Show app in Finder</td>
-                    </tr>
-                    <tr>
-                        <td><span class="kbd">Enter</span></td>
-                        <td>Update selected app</td>
-                    </tr>
-                    <tr>
-                        <td><span class="kbd">Space</span></td>
-                        <td>Quick Look preview</td>
+                        <td><span class="kbd">⌘</span> + <span class="kbd">W</span></td>
+                        <td>Close Window</td>
                     </tr>
                     <tr>
                         <td><span class="kbd">⌘</span> + <span class="kbd">Q</span></td>
@@ -831,6 +808,11 @@
                     </tr>
                 </tbody>
             </table>
+            
+            <div class="help-card info">
+                <h4>ℹ️ Note</h4>
+                <p>Additional keyboard shortcuts are available through the menu bar. Check the menu items for their corresponding shortcuts.</p>
+            </div>
 
             <h2 id="troubleshooting">Troubleshooting</h2>
             <p>Solutions to common issues you may encounter.</p>
@@ -851,12 +833,13 @@
                 <li>Try enabling "Include Beta Versions" in settings if you are looking for pre-release updates</li>
             </ul>
 
-            <h3>An update fails to install</h3>
+            <h3>An update link won’t open or install fails</h3>
             <ul>
+                <li>Open the update link again from MacFresh</li>
+                <li>If a disk image doesn’t open automatically, open it from your Downloads folder</li>
                 <li>Make sure the app is not currently running</li>
                 <li>Check that you have enough disk space</li>
-                <li>Verify that your user account has permission to modify the Applications folder</li>
-                <li>Try downloading and installing the update manually from the developer's website</li>
+                <li>Download the installer directly from the developer’s website if needed</li>
             </ul>
 
             <h3>MacFresh is using too much CPU or memory</h3>
@@ -897,7 +880,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-icon">🍃</span>
+                        <img class="logo-icon" src="images/favicon.png" alt="MacFresh icon">
                         <span class="logo-text">MacFresh</span>
                     </a>
                     <p>Keep your Mac fresh.<br>The universal app updater for macOS.</p>

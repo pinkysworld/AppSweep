@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MacFresh Support - Get help with MacFresh app updater for macOS.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Support - MacFresh">
+    <meta property="og:description" content="MacFresh Support - Get help with MacFresh app updater for macOS.">
+    <meta property="og:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
+    <meta property="og:url" content="https://pinkysworld.github.io/MacFresh/support.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MacFresh">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Support - MacFresh">
+    <meta name="twitter:description" content="MacFresh Support - Get help with MacFresh app updater for macOS.">
+    <meta name="twitter:image" content="https://pinkysworld.github.io/MacFresh/images/og-image.png">
+
     <title>Support - MacFresh</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
@@ -17,7 +32,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">🍃</span>
+                <img class="logo-icon" src="images/favicon.png" alt="MacFresh icon">
                 <span class="logo-text">MacFresh</span>
             </a>
             <ul class="nav-links">
@@ -94,9 +109,10 @@
                 </ul>
                 <p>Try clicking "Refresh" to force a new scan, or report the missing app to us.</p>
 
-                <h4>Download failed</h4>
-                <p>If a download fails:</p>
+                <h4>Update link won’t open or download failed</h4>
+                <p>If an update link won’t open or a download fails:</p>
                 <ul>
+                    <li>Open the update link again from MacFresh</li>
                     <li>Check your internet connection</li>
                     <li>Ensure you have enough disk space</li>
                     <li>Try downloading again later (the server might be busy)</li>
@@ -117,40 +133,24 @@
                             <td>Scan for updates</td>
                         </tr>
                         <tr>
-                            <td><kbd>⌘</kbd> + <kbd>U</kbd></td>
-                            <td>Update selected app</td>
-                        </tr>
-                        <tr>
                             <td><kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>U</kbd></td>
-                            <td>Update all apps</td>
+                            <td>Open update links</td>
                         </tr>
                         <tr>
                             <td><kbd>⌘</kbd> + <kbd>,</kbd></td>
                             <td>Open Settings</td>
                         </tr>
                         <tr>
-                            <td><kbd>⌘</kbd> + <kbd>I</kbd></td>
-                            <td>Show app info</td>
+                            <td><kbd>⌘</kbd> + <kbd>?</kbd></td>
+                            <td>Open Help</td>
                         </tr>
                         <tr>
-                            <td><kbd>⌘</kbd> + <kbd>⌫</kbd></td>
-                            <td>Ignore selected app</td>
+                            <td><kbd>⌘</kbd> + <kbd>W</kbd></td>
+                            <td>Close Window</td>
                         </tr>
                         <tr>
-                            <td><kbd>⌘</kbd> + <kbd>F</kbd></td>
-                            <td>Search apps</td>
-                        </tr>
-                        <tr>
-                            <td><kbd>⌘</kbd> + <kbd>1</kbd></td>
-                            <td>Show All Apps</td>
-                        </tr>
-                        <tr>
-                            <td><kbd>⌘</kbd> + <kbd>2</kbd></td>
-                            <td>Show Updates Available</td>
-                        </tr>
-                        <tr>
-                            <td><kbd>⌘</kbd> + <kbd>3</kbd></td>
-                            <td>Show Up to Date</td>
+                            <td><kbd>⌘</kbd> + <kbd>Q</kbd></td>
+                            <td>Quit MacFresh</td>
                         </tr>
                     </tbody>
                 </table>
@@ -160,7 +160,7 @@
                     <li><strong>macOS Version:</strong> macOS 14.0 (Sonoma) or later</li>
                     <li><strong>Processor:</strong> Apple Silicon or Intel (Universal Binary)</li>
                     <li><strong>Memory:</strong> 4 GB RAM minimum</li>
-                    <li><strong>Storage:</strong> 50 MB for the app (plus space for downloads)</li>
+                    <li><strong>Storage:</strong> 50 MB for the app (plus space for downloaded installers)</li>
                     <li><strong>Internet:</strong> Required for update checking</li>
                 </ul>
             </div>
@@ -263,7 +263,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-icon">🍃</span>
+                        <img class="logo-icon" src="images/favicon.png" alt="MacFresh icon">
                         <span class="logo-text">MacFresh</span>
                     </a>
                     <p>Keep your Mac fresh.<br>The universal app updater for macOS.</p>
