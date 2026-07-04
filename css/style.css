@@ -812,6 +812,14 @@ h4 { font-size: 1.125rem; }
     width: 100%;
 }
 
+.pricing-note {
+    margin-top: var(--spacing-md);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
 /* Testimonials Section */
 .testimonials-section {
     padding: var(--spacing-4xl) 0;

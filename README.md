@@ -102,7 +102,7 @@ The support email is set to: **mip@gmx.biz**
 Search and replace in HTML files if you need to change it.
 
 ### App Store Link
-Replace `https://apps.apple.com/app/appsweep` with your actual App Store URL.
+The public checkout link is `https://michelpicker.gumroad.com/l/AppSweep`.
 
 ## Features
 
