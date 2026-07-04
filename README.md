@@ -18,6 +18,7 @@ docs/
 │   └── style.css       # Main stylesheet
 ├── js/
 │   └── main.js         # JavaScript functionality
+├── update.json         # AppSweep direct-download update metadata
 └── images/
     ├── favicon.png     # Site favicon (add 32x32 PNG)
     └── og-image.png    # Open Graph image (add 1200x630 PNG)
@@ -103,6 +104,9 @@ Search and replace in HTML files if you need to change it.
 
 ### App Store Link
 The public checkout link is `https://michelpicker.gumroad.com/l/AppSweep`.
+
+### Direct Download Update Metadata
+`update.json` is read by direct-download AppSweep builds. Keep it at the currently published Gumroad version/build, then bump it after uploading a newer DMG/package to Gumroad.
 
 ## Features
 

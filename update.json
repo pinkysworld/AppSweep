@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 1,
+  "minimumSystemVersion": "14.0",
+  "releaseDate": "2026-07-04",
+  "releaseNotes": "Initial direct-download release. AppSweep can notify you when newer direct-download builds become available.",
+  "gumroadURL": "https://michelpicker.gumroad.com/l/AppSweep"
+}
